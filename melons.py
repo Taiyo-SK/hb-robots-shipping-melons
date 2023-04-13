@@ -20,7 +20,8 @@ class Melon:
     def prep(self):
         """Prepare the melon."""
 
-
+        robots.cleanerbot.clean(self)
+        robots.stickerbot.apply_logo(self)
 
     def __str__(self):
         """Print out information about melon."""
@@ -34,8 +35,7 @@ class Melon:
 class Squash(Melon):
     """Winter squash."""
 
-    def __init__(self, melon_type):
-        super().__init__(melon_type)
-
-    def __paint__(self):
+    def __prep__(self):
+        """Prepare the squash."""
+        super().prep()
         robots.painterbot.paint(self)
